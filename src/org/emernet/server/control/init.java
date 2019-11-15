@@ -6,19 +6,19 @@ import java.io.File;
 
 public class init {
 
-    public static boolean isLinux(){
-        if(System.getProperty("os.name").equals("Linux")){
+    public static boolean isLinux() {
+        if (System.getProperty("os.name").equals("Linux")) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
 
-    public static boolean isSetup(){
+    public static boolean isSetup() {
         File doneFile = new File("/var/www/emernet/.done");
-        if (doneFile.exists()){
+        if (doneFile.exists()) {
             return true;
-        }else{
+        } else {
             return false;
         }
 

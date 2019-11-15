@@ -44,9 +44,9 @@ public class checkUpdate {
         }
 
         assert currentVers != null;
-        if (!currentVers.equals(latestVers)){
+        if (!currentVers.equals(latestVers)) {
             return false;
-        }else {
+        } else {
             return true;
         }
 

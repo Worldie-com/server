@@ -4,3 +4,7 @@
 .idea/vcs.xml
 server.iml
 *.class
+src/META-INF/MANIFEST.MF
+out/production/server/META-INF/MANIFEST.MF
+.idea/artifacts/server_jar.xml
+out/artifacts/server_jar/server.jar
