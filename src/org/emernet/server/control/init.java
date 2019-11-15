@@ -1,14 +1,27 @@
 package org.emernet.server.control;
 
+import com.sun.deploy.util.SystemUtils;
+
 import java.io.File;
 
 public class init {
 
-    public static void checkOS(){
-
+    public static boolean isLinux() {
+        if (System.getProperty("os.name").equals("Linux")) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    public static void checkSetup(){
-        File isSetup = new File("");
+    public static boolean isSetup() {
+        File doneFile = new File("/var/www/emernet/.done");
+        if (doneFile.exists()) {
+            return true;
+        } else {
+            return false;
+        }
+
+
     }
 }
