@@ -13,6 +13,12 @@ public class SetupHandler {
         aptTask.instApache();
         //Install Unzip
         aptTask.instUnzip();
+
+        // Create var/www/emernet
+        fileTask.mkdir();
+
+        //Create ApacheConfig
+        fileTask.createConfig();
     }
 
     public static void checkRoot(){
@@ -31,10 +37,10 @@ public class SetupHandler {
 
     // Outline
     // 1. Check for root
-    // 2. apt-update
-    // 3. install apache2
-    // 4. install unzip
-    // 5. mkdir /var/www/emernet
+    // 2. apt-update - done
+    // 3. install apache2 - done
+    // 4. install unzip - done
+    // 5. mkdir /var/www/emernet - done
     // 6. download/create Apache .conf for EMERNET
     // 7. Download EMERNET System
     // 8. unzip
