@@ -17,8 +17,8 @@ public class SetupHandler {
         // Create var/www/emernet
         fileTask.mkdir();
 
-        //Create ApacheConfig
-        fileTask.createConfig();
+        //get ApacheConfig
+        fileTask.getConfig();
     }
 
     public static void checkRoot(){

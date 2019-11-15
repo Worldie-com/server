@@ -14,7 +14,7 @@ public class fileTask {
         }
     }
 
-    public static void createConfig(){
+    public static void getConfig(){
 
     }
 
