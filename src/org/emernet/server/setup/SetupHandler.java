@@ -41,7 +41,7 @@ public class SetupHandler {
     // 3. install apache2 - done
     // 4. install unzip - done
     // 5. mkdir /var/www/emernet - done
-    // 6. download/create Apache .conf for EMERNET
+    // 6. download/create Apache .conf for EMERNET - done
     // 7. Download EMERNET System
     // 8. unzip
     // 9. Cleanup (remove .zip)
