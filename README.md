@@ -68,6 +68,7 @@ If there is anything wrong with the setup, runtime it self or updating, please o
 This runtime/setup is currently still in beta and not fully tested. We urge you to try this setup on a device, which does NOT run any important applications or has valuable data on it to prevent data loss in case of an error. If there is anything wrong with the runtime/setup please open an issue [here](https://github.com/emernet-eins/server/issues).
 
 <p id="future"></p>
+
 ## A quick look into the future
 We are planning big for this project.
 
