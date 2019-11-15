@@ -8,8 +8,11 @@ public class SetupHandler {
         checkRoot();
 
         //Check for Package Updates
-
-
+        aptTask.aptUpdate();
+        //Install Apache2
+        aptTask.instApache();
+        //Install Unzip
+        aptTask.instUnzip();
     }
 
     public static void checkRoot(){
