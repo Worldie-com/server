@@ -1,13 +1,12 @@
 package org.emernet.server.control;
 
+import org.emernet.server.colorlib.CmdColors;
 import org.emernet.server.updater.checkUpdate;
+import org.emernet.server.setup.SetupHandler;
 
 import java.util.concurrent.TimeUnit;
 
 public class Main {
-    public static final String ANSI_RED = "\u001B[31m";
-    public static final String ANSI_RESET = "\u001B[0m";
-    public static final String ANSI_GREEN = "\u001B[32m";
 
     public static void main(String[] args) {
         System.out.println("Welcome to EMERNET-E.I.N.S server!");
@@ -18,7 +17,7 @@ public class Main {
         if (init.isLinux()) {
             System.out.println("OS is Linux! Ready to go!");
         } else {
-            System.out.println(ANSI_RED + "This application is only working with Linux." + ANSI_RESET);
+            System.out.println(CmdColors.CMD_RED + "This application is only working with Linux." + CmdColors.CMD_RESET);
             System.exit(1);
         }
 
@@ -26,7 +25,7 @@ public class Main {
         System.out.println("Checking if a version is installed...");
         init.isSetup();
         if (init.isSetup()) {
-            System.out.println(ANSI_GREEN + "EMERNET E.I.N.S is already Setup!" + ANSI_RESET);
+            System.out.println(CmdColors.CMD_RED + "EMERNET E.I.N.S is already Setup!" + CmdColors.CMD_RESET);
             //Launch Update Checker
             System.out.println("Checking for updates...");
             checkUpdate.isLatest();
@@ -46,6 +45,7 @@ public class Main {
             System.out.println("EMERNET E.I.N.S seems not to be setup!");
             //Launch Setup
             System.out.println("Launching setup...");
+            SetupHandler.handler();
         }
     }
 }

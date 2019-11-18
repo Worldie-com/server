@@ -12,7 +12,7 @@ public class checkUpdate {
 
         try {
 
-            URL url = new URL("text file Link");
+            URL url = new URL("https://github.com/emernet-eins/system/blob/master/version.md");
 
             // read text returned by server
             BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
