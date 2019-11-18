@@ -12,14 +12,6 @@ public class fileTask {
 
     public static Runtime rt = Runtime.getRuntime();
 
-    public static void mkdir() {
-        try {
-            Process createDir = rt.exec("sudo mkdir /var/www/emernet");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     public static void getConfig() {
         try {
             // Get Config File from Github
@@ -147,6 +139,14 @@ public class fileTask {
             while ((s = stdError.readLine()) != null) {
                 System.out.println(s);
             }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void cleanup(){
+        try {
+            Process cleaingService = rt.exec("rm " + Downloader.versionNbr +".zip");
         } catch (IOException e) {
             e.printStackTrace();
         }
