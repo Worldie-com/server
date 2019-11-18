@@ -30,7 +30,7 @@ public class checkUpdate {
         }
 
 
-        File currVers = new File("/var/www/emernet/.currVers");
+        File currVers = new File("/var/www/emernet/version.md");
         BufferedReader br = null;
         try {
             br = new BufferedReader(new FileReader(currVers));

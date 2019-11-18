@@ -3,6 +3,7 @@ package org.emernet.server.control;
 import org.emernet.server.colorlib.CmdColors;
 import org.emernet.server.updater.checkUpdate;
 import org.emernet.server.setup.SetupHandler;
+import org.emernet.server.updater.doUpdate;
 
 import java.util.concurrent.TimeUnit;
 
@@ -40,6 +41,9 @@ public class Main {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+            } else
+            {
+                doUpdate.getUpdate();
             }
         } else {
             System.out.println("EMERNET E.I.N.S seems not to be setup!");
