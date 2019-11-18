@@ -17,4 +17,12 @@ public class fileTask {
             e.printStackTrace();
         }
     }
+
+    public static void deleteOld(){
+        try {
+            Process delSys = rt.exec("sudo rm -rf /var/www/emernet");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
