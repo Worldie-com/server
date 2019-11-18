@@ -15,7 +15,7 @@ public class Downloader {
 
         try {
 
-            URL url = new URL("https://github.com/emernet-eins/system/blob/master/version.md");
+            URL url = new URL("https://raw.githubusercontent.com/emernet-eins/system/master/version.md");
 
             // read text returned by server
             BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
@@ -39,6 +39,26 @@ public class Downloader {
         //Download latest Version from releases
         try {
             Process dlVers = rt.exec("wget " + versDL);
+
+            BufferedReader stdInput = new BufferedReader(new
+                    InputStreamReader(dlVers.getInputStream()));
+
+            BufferedReader stdError = new BufferedReader(new
+                    InputStreamReader(dlVers.getErrorStream()));
+
+            // Read the output from the command
+            System.out.println("Command Log:\n");
+            String s = null;
+            while ((s = stdInput.readLine()) != null) {
+                System.out.println(s);
+            }
+
+            // Read any errors from the attempted command
+            System.out.println("Errors:\n");
+            while ((s = stdError.readLine()) != null) {
+                System.out.println(s);
+            }
+
         } catch (IOException e) {
             e.printStackTrace();
         }

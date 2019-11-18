@@ -1,6 +1,7 @@
 package org.emernet.server.setup;
 
 import org.emernet.server.colorlib.CmdColors;
+import org.emernet.server.control.Downloader;
 
 public class SetupHandler {
     public static void handler(){
@@ -19,6 +20,9 @@ public class SetupHandler {
 
         //get ApacheConfig
         fileTask.getConfig();
+
+        //Download System
+        Downloader.downloadSystem();
     }
 
     public static void checkRoot(){

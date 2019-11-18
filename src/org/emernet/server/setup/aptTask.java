@@ -20,14 +20,14 @@ public class aptTask {
                     InputStreamReader(aptUpdater.getErrorStream()));
 
             // Read the output from the command
-            System.out.println("Here is the standard output of the command:\n");
+            System.out.println("Command Log:\n");
             String s = null;
             while ((s = stdInput.readLine()) != null) {
                 System.out.println(s);
             }
 
             // Read any errors from the attempted command
-            System.out.println("Here is the standard error of the command (if any):\n");
+            System.out.println("Error:\n");
             while ((s = stdError.readLine()) != null) {
                 System.out.println(s);
             }
@@ -49,14 +49,14 @@ public class aptTask {
                     InputStreamReader(installApache.getErrorStream()));
 
             // Read the output from the command
-            System.out.println("Here is the standard output of the command:\n");
+            System.out.println("Command Log:\n");
             String s = null;
             while ((s = stdInput.readLine()) != null) {
                 System.out.println(s);
             }
 
             // Read any errors from the attempted command
-            System.out.println("Here is the standard error of the command (if any):\n");
+            System.out.println("Error:\n");
             while ((s = stdError.readLine()) != null) {
                 System.out.println(s);
             }
@@ -77,14 +77,14 @@ public class aptTask {
                     InputStreamReader(installUnzip.getErrorStream()));
 
             // Read the output from the command
-            System.out.println("Here is the standard output of the command:\n");
+            System.out.println("Command Log:\n");
             String s = null;
             while ((s = stdInput.readLine()) != null) {
                 System.out.println(s);
             }
 
             // Read any errors from the attempted command
-            System.out.println("Here is the standard error of the command (if any):\n");
+            System.out.println("Errors:\n");
             while ((s = stdError.readLine()) != null) {
                 System.out.println(s);
             }
