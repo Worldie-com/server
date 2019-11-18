@@ -14,6 +14,12 @@ public class UpdateHandler {
         // Delete old System
         fileTask.deleteOld();
 
+        // Unzip new System
+        fileTask.unzip();
+
+        // Move new System
+        fileTask.moveSystem();
+
     }
 
     //Outline
