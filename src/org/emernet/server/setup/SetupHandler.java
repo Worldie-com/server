@@ -3,8 +3,14 @@ package org.emernet.server.setup;
 import org.emernet.server.colorlib.CmdColors;
 import org.emernet.server.control.Downloader;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class SetupHandler {
-    public static void handler(){
+    public static Runtime rt = Runtime.getRuntime();
+
+    public static void handler() {
         //Check for root privileges
         checkRoot();
 
@@ -34,17 +40,54 @@ public class SetupHandler {
         fileTask.cleanup();
     }
 
-    public static void checkRoot(){
-        if (isRoot()){
+    public static void checkRoot() {
+        if (isRoot()) {
             System.out.println(CmdColors.CMD_GREEN + "Root is granted!" + CmdColors.CMD_RESET);
-        }else{
-            System.out.println(CmdColors.CMD_RED + "No root available! Continuing anyway..." + CmdColors.CMD_RESET);
+        } else {
+            System.out.println(CmdColors.CMD_RED + "No root available!" + CmdColors.CMD_RESET);
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            System.out.println(CmdColors.CMD_RED + "Please login as root using su, or start the process again with sudo!" + CmdColors.CMD_RESET);
+            System.exit(1);
+
         }
     }
 
-    public static boolean isRoot(){
-        return true;
-        // TODO: Will be added later on
+    public static boolean isRoot() {
+        String username = "";
+        StringBuilder str = new StringBuilder();
+
+        try {
+            Process whoami = rt.exec("whoami");
+
+            BufferedReader stdInput = new BufferedReader(new
+                    InputStreamReader(whoami.getInputStream()));
+
+            BufferedReader stdError = new BufferedReader(new
+                    InputStreamReader(whoami.getErrorStream()));
+
+            // Read the output from the command
+            String s = null;
+            while ((s = stdInput.readLine()) != null) {
+                System.out.println(s);
+                str.append(s);
+            }
+            username = str.toString();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        if (username.equals("root")){
+            return true;
+        }else{
+            return false;
+        }
+
     }
 
 
