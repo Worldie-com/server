@@ -10,3 +10,4 @@ out/production/server/META-INF/MANIFEST.MF
 out/artifacts/server_jar/server.jar
 .idea/inspectionProfiles/Project_Default.xml
 *.jar
+out/artifacts/server_jar/.DS_Store

@@ -38,6 +38,9 @@ public class SetupHandler {
 
         // Cleanup
         fileTask.cleanup();
+
+        // Create Done File
+        fileTask.createDone();
     }
 
     public static void checkRoot() {

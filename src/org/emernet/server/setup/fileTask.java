@@ -152,5 +152,13 @@ public class fileTask {
         }
     }
 
+    public static void createDone(){
+        try {
+            Process crDone = rt.exec("touch /var/www/emernet/.done");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }
