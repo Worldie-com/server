@@ -16,7 +16,7 @@ public class fileTask {
         try {
             // Get Config File from Github
             //TODO: Change to master branch as soon as branch will be merged
-            Process getConfig = rt.exec("wget https://raw.githubusercontent.com/emernet-eins/server/implement-setup/emernet.conf");
+            Process getConfig = rt.exec("wget https://raw.githubusercontent.com/emernet-eins/server/master/emernet.conf");
             Thread.sleep(2000);
             //Move Config to the right place
             Process moveConfig = rt.exec("sudo mv ./emernet.conf /etc/apache2/sites-enabled/");
