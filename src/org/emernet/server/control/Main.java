@@ -4,7 +4,6 @@ import org.emernet.server.colorlib.CmdColors;
 import org.emernet.server.updater.UpdateHandler;
 import org.emernet.server.updater.checkUpdate;
 import org.emernet.server.setup.SetupHandler;
-import org.emernet.server.updater.doUpdate;
 
 import java.util.concurrent.TimeUnit;
 

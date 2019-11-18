@@ -20,6 +20,8 @@ public class SetupHandler {
         aptTask.instApache();
         //Install Unzip
         aptTask.instUnzip();
+        //Install Zip
+        aptTask.instZip();
 
         //get ApacheConfig
         fileTask.getConfig();
