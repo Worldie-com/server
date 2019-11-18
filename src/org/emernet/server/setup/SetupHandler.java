@@ -16,13 +16,22 @@ public class SetupHandler {
         aptTask.instUnzip();
 
         // Create var/www/emernet
-        fileTask.mkdir();
+       // fileTask.mkdir();
 
         //get ApacheConfig
         fileTask.getConfig();
 
         //Download System
         Downloader.downloadSystem();
+
+        //Unzip System
+        fileTask.unzip();
+
+        //move System
+        fileTask.moveSystem();
+
+        //Fix Permissions
+        fileTask.fixPerms();
     }
 
     public static void checkRoot(){
@@ -46,9 +55,10 @@ public class SetupHandler {
     // 4. install unzip - done
     // 5. mkdir /var/www/emernet - done
     // 6. download/create Apache .conf for EMERNET - done
-    // 7. Download EMERNET System
-    // 8. unzip
-    // 9. Cleanup (remove .zip)
+    // 7. Download EMERNET System - done
+    // 8. unzip and move
+    // 9. Fix permissions
+    // 10. Cleanup (remove .zip)
 
 
 }

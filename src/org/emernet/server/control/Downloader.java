@@ -8,6 +8,7 @@ import java.net.URL;
 
 public class Downloader {
     public static Runtime rt = Runtime.getRuntime();
+    public static String versionNbr= "";
 
     public static void downloadSystem(){
         //get Latest Version Tag from GitHub
@@ -25,6 +26,7 @@ public class Downloader {
                 latestVers = line;
             }
             in.close();
+            versionNbr = latestVers;
 
         } catch (MalformedURLException e) {
             System.out.println("Malformed URL: " + e.getMessage());
