@@ -61,6 +61,9 @@ public class SetupHandler {
         // Create Done File
         System.out.println("Done!");
         fileTask.createDone();
+
+        // Relaunch Runtime in Screen
+
     }
 
     public static void checkRoot() {
