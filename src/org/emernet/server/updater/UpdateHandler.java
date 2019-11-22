@@ -20,6 +20,9 @@ public class UpdateHandler {
         // Move new System
         fileTask.moveSystem();
 
+        // Create .done File
+        fileTask.createDone();
+
     }
 
     //Outline
