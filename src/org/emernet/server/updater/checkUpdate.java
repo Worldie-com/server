@@ -9,10 +9,11 @@ public class checkUpdate {
 
         String latestVers = "";
         String currentVers = "";
+        String instVers  ="";
 
         try {
 
-            URL url = new URL("https://github.com/emernet-eins/system/blob/master/version.md");
+            URL url = new URL("https://raw.githubusercontent.com/emernet-eins/system/master/version.md");
 
             // read text returned by server
             BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
@@ -22,6 +23,7 @@ public class checkUpdate {
                 latestVers = line;
             }
             in.close();
+            System.out.println(latestVers);
 
         } catch (MalformedURLException e) {
             System.out.println("Malformed URL: " + e.getMessage());
@@ -35,16 +37,17 @@ public class checkUpdate {
         try {
             br = new BufferedReader(new FileReader(currVers));
             while ((currentVers = br.readLine()) != null)
-                System.out.println(currentVers);
-
+                instVers = currentVers;
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        assert currentVers != null;
-        if (!currentVers.equals(latestVers)) {
+        System.out.println(instVers);
+
+
+        if (!instVers.equals(latestVers)) {
             return false;
         } else {
             return true;

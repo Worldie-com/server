@@ -66,6 +66,34 @@ public class aptTask {
         }
     }
 
+    public static void instZip(){
+        try {
+            Process installZip = rt.exec("sudo apt-get -y install unzip");
+
+            BufferedReader stdInput = new BufferedReader(new
+                    InputStreamReader(installZip.getInputStream()));
+
+            BufferedReader stdError = new BufferedReader(new
+                    InputStreamReader(installZip.getErrorStream()));
+
+            // Read the output from the command
+            System.out.println("Command Log:\n");
+            String s = null;
+            while ((s = stdInput.readLine()) != null) {
+                System.out.println(s);
+            }
+
+            // Read any errors from the attempted command
+            System.out.println("Errors:\n");
+            while ((s = stdError.readLine()) != null) {
+                System.out.println(s);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     public static void instUnzip() {
         try {
             Process installUnzip = rt.exec("sudo apt-get -y install unzip");
