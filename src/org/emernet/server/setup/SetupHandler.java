@@ -2,6 +2,7 @@ package org.emernet.server.setup;
 
 import org.emernet.server.colorlib.CmdColors;
 import org.emernet.server.control.Downloader;
+import org.emernet.server.control.Controller;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -63,7 +64,7 @@ public class SetupHandler {
         fileTask.createDone();
 
         // Relaunch Runtime in Screen
-
+        Controller.relaunch();
     }
 
     public static void checkRoot() {
