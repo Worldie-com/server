@@ -15,10 +15,11 @@ public class fileTask {
     public static void getConfig() {
         try {
             // Get Config File from Github
-            //TODO: Change to master branch as soon as branch will be merged
+            System.out.println("Downloading Config...");
             Process getConfig = rt.exec("wget https://raw.githubusercontent.com/emernet-eins/server/master/emernet.conf");
             Thread.sleep(2000);
             //Move Config to the right place
+            System.out.println("Moving config...");
             Process moveConfig = rt.exec("sudo mv ./emernet.conf /etc/apache2/sites-enabled/");
 
             BufferedReader stdInput = new BufferedReader(new
@@ -41,8 +42,10 @@ public class fileTask {
             }
 
             //remove 000-default.conf
+            System.out.println("Removing default config...");
             Process removeDefault = rt.exec("sudo rm -rf /etc/apache2/sites-enabled/000-default.conf");
             //Restart apache2
+            System.out.println("Restarting apache");
             Process restartApache = rt.exec("sudo service apache2 restart");
         } catch (IOException e) {
             e.printStackTrace();

@@ -12,36 +12,50 @@ public class SetupHandler {
 
     public static void handler() {
         //Check for root privileges
+        System.out.println("Checking for root privileges...");
         checkRoot();
 
         //Check for Package Updates
+        System.out.println("Refreshing Package List...");
         aptTask.aptUpdate();
+
         //Install Apache2
+        System.out.println("Installing Apache2...");
         aptTask.instApache();
+
         //Install Unzip
+        System.out.println("Installing unzip...");
         aptTask.instUnzip();
+
         //Install Zip
+        System.out.println("Installing zip...");
         aptTask.instZip();
 
         //get ApacheConfig
         fileTask.getConfig();
 
         //Download System
+        System.out.println("Downloading latest System...");
         Downloader.downloadSystem();
 
         //Unzip System
+        System.out.println("Unzipping System...");
         fileTask.unzip();
 
         //move System
+        System.out.println("Moving System to /var/www/emernet...");
         fileTask.moveSystem();
 
         //Fix Permissions
+        System.out.println("Fixing permissions...");
         fileTask.fixPerms();
 
         // Cleanup
+        System.out.println("Cleaning up...");
         fileTask.cleanup();
 
         // Create Done File
+        System.out.println("Done!");
         fileTask.createDone();
     }
 
