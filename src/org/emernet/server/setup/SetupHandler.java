@@ -31,6 +31,10 @@ public class SetupHandler {
         System.out.println("Installing zip...");
         aptTask.instZip();
 
+        // Install Screen
+        System.out.println("Installing Screen...");
+        aptTask.instScreen();
+
         //get ApacheConfig
         fileTask.getConfig();
 
