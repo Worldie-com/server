@@ -23,7 +23,7 @@ public class checkUpdate {
                 latestVers = line;
             }
             in.close();
-            System.out.println(latestVers);
+            //System.out.println(latestVers);
 
         } catch (MalformedURLException e) {
             System.out.println("Malformed URL: " + e.getMessage());
@@ -44,7 +44,7 @@ public class checkUpdate {
             e.printStackTrace();
         }
 
-        System.out.println(instVers);
+        //System.out.println(instVers);
 
 
         if (!instVers.equals(latestVers)) {
