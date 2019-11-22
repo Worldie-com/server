@@ -121,4 +121,35 @@ public class aptTask {
         }
     }
 
+    public static void instScreen(){
+        try {
+            Process installScreen = rt.exec("apt-get install screen");
+
+            BufferedReader stdInput = new BufferedReader(new
+                    InputStreamReader(installScreen.getInputStream()));
+
+            BufferedReader stdError = new BufferedReader(new
+                    InputStreamReader(installScreen.getErrorStream()));
+
+            // Read the output from the command
+            System.out.println("Command Log:\n");
+            String s = null;
+            while ((s = stdInput.readLine()) != null) {
+                System.out.println(s);
+            }
+
+            // Read any errors from the attempted command
+            System.out.println("Errors:\n");
+            while ((s = stdError.readLine()) != null) {
+                System.out.println(s);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
