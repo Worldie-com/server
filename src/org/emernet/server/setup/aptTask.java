@@ -143,9 +143,6 @@ public class aptTask {
             while ((s = stdError.readLine()) != null) {
                 System.out.println(s);
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
         } catch (IOException e) {
             e.printStackTrace();
