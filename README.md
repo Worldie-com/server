@@ -45,6 +45,8 @@ The setup will start to install all the required packages, applications and webs
 
 **Packages that will be installed**
 - Apache2
+- zip
+- unzip
 - More coming soon (<a href="#future">Click here for more information</a>)
 
 **What this setup does**
