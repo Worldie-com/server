@@ -3,6 +3,7 @@ package org.emernet.server.setup;
 import org.emernet.server.control.Downloader;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
@@ -161,6 +162,10 @@ public class fileTask {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void createSysInfo(){
+        
     }
 
 

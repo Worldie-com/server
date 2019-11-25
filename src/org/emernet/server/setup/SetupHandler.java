@@ -54,6 +54,10 @@ public class SetupHandler {
         System.out.println("Cleaning up...");
         fileTask.cleanup();
 
+        // Create Systeminfo
+        System.out.println("Creating System-Info...");
+        fileTask.createSysInfo();
+
         // Create Done File
         System.out.println("Done!");
         fileTask.createDone();
