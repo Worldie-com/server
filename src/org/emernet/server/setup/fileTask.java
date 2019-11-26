@@ -165,7 +165,7 @@ public class fileTask {
         File sysInfo = new File("/var/www/emernet/systeminfo.md");
 
         // Get System Information
-        String SystemInfo = System.getProperty("os.name") + System.getProperty("os.arch");
+        String SystemInfo = System.getProperty("os.name") + " (" + System.getProperty("os.arch") + ")";
 
         try {
             sysInfo.createNewFile();
