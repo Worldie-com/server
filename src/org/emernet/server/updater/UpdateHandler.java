@@ -25,6 +25,10 @@ public class UpdateHandler {
         System.out.println("Moving System to /var/www/emernet...");
         fileTask.moveSystem();
 
+        // Create new SystemInfo
+        System.out.println("Creating Systeminfo...");
+        fileTask.createSysInfo();
+
         // Create .done File
         System.out.println("Done!");
         fileTask.createDone();
