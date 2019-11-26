@@ -86,7 +86,7 @@ su
 Launch the jar file
 
 ```bash
-sudo java -jar emernet-runtime_X.jar
+java -jar emernet-runtime_X.jar
 ```
 
 The setup will start to install all the required packages, applications and websites to your device.
@@ -96,7 +96,7 @@ The setup will start to install all the required packages, applications and webs
 * Apache2
 * zip
 * unzip
-* More comint soon ([Click here for more information](https://github.com/emernet-eins/server#concepts)) 
+* More coming soon ([Click here for more information](https://github.com/emernet-eins/server#concepts)) 
 
 ### What this setup does
 
@@ -226,6 +226,7 @@ This is how we use the donations:
 <h2 align="center" id="specialthanks">Special Thanks to</h2>
 <p align="center">(In chronological order)</p>
 
-* @google for [Material.io](http://material.io/), which provides our (beautiful) design
+* @W3schools for [W3CSS](https://www.w3schools.com/w3css/), which provides our (beautiful) design
+* Fontawesome for well... [Fontawesome](https://www.w3schools.com/w3css/)
 * Everyone who has helped making EMERNET what it is today
 * Everyone I forgot to mention here, but also influenced EMERNET.
