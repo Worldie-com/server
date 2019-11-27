@@ -21,7 +21,9 @@ public class init {
         } else {
             return false;
         }
+    }
 
+    public static void checkConnection(){
 
     }
 }

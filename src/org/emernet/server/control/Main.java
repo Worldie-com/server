@@ -27,6 +27,10 @@ public class Main {
         init.isSetup();
         if (init.isSetup()) {
             System.out.println(CmdColors.CMD_RED + "EMERNET E.I.N.S is already Setup!" + CmdColors.CMD_RESET);
+
+            // Check internet connection
+            init.checkConnection();
+
             //Launch Update Checker
             System.out.println("Checking for updates...");
             checkUpdate.isLatest();
