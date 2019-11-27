@@ -38,10 +38,12 @@ public class Main {
                 System.out.println("EMERNET E.I.N.S is already on the latest Version.");
                 System.out.println("Going to sleep for 24 hours.");
                 try {
-
-
-
-                    Thread.sleep(TimeUnit.HOURS.toMillis(24));
+                    int count = 0;
+                    while (count < 24){
+                        count++;
+                        Connection.checkConnection();
+                        Thread.sleep(TimeUnit.MINUTES.toMillis(30));
+                    }
                     //Restart Server to check everything again.
                     System.out.println("Restarting EMERNET E.I.N.S server...");
                     main(null);

@@ -33,7 +33,7 @@ public class init {
 
         try {
 
-            URL url = new URL("http://rustige.me/check.txt");
+            URL url = new URL("https://raw.githubusercontent.com/emernet-eins/server/implement-connection-check/connection.md");
 
             // read text returned by server
             BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
