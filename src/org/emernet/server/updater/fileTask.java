@@ -3,9 +3,7 @@ package org.emernet.server.updater;
 import org.emernet.server.colorlib.CmdColors;
 import org.emernet.server.control.Downloader;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 
 public class fileTask {
 
@@ -102,6 +100,24 @@ public class fileTask {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void createSysInfo(){
+        File sysInfo = new File("/var/www/emernet/systeminfo.md");
+
+        // Get System Information
+        String SystemInfo = System.getProperty("os.name") + " (" + System.getProperty("os.arch") + ")";
+
+        try {
+            sysInfo.createNewFile();
+
+            BufferedWriter writeInfo = new BufferedWriter(new FileWriter(sysInfo));
+            writeInfo.write(SystemInfo);
+            writeInfo.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
 }
