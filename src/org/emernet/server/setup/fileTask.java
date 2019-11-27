@@ -157,8 +157,7 @@ public class fileTask {
 
     public static void downloadShell(){
         try {
-            //TODO: Change when merging
-            Process dlsh = rt.exec("wget https://raw.githubusercontent.com/emernet-eins/server/implement-screen/relaunch.sh");
+            Process dlsh = rt.exec("wget https://raw.githubusercontent.com/emernet-eins/server/master/relaunch.sh");
             Thread.sleep(2000);
         } catch (IOException e) {
             e.printStackTrace();
