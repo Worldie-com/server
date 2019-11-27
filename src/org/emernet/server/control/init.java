@@ -2,7 +2,12 @@ package org.emernet.server.control;
 
 import com.sun.deploy.util.SystemUtils;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class init {
 
@@ -23,7 +28,34 @@ public class init {
         }
     }
 
-    public static void isConnected(){
+    public static boolean isConnected(){
+        String status = "";
+
+        try {
+
+            URL url = new URL("http://rustige.me/check.txt");
+
+            // read text returned by server
+            BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
+
+            String line;
+            while ((line = in.readLine()) != null) {
+                status = line;
+            }
+            in.close();
+            //System.out.println(latestVers);
+
+        } catch (MalformedURLException e) {
+            System.out.println("Malformed URL: " + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("I/O Error: " + e.getMessage());
+        }
+
+        if (status.equals("online")){
+            return true;
+        }else{
+            return false;
+        }
 
     }
 }

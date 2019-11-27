@@ -29,7 +29,7 @@ public class Main {
             System.out.println(CmdColors.CMD_RED + "EMERNET E.I.N.S is already Setup!" + CmdColors.CMD_RESET);
 
             // Check internet connection
-            init.isConnected();
+            Connection.checkConnection();
 
             //Launch Update Checker
             System.out.println("Checking for updates...");
@@ -38,6 +38,9 @@ public class Main {
                 System.out.println("EMERNET E.I.N.S is already on the latest Version.");
                 System.out.println("Going to sleep for 24 hours.");
                 try {
+
+
+
                     Thread.sleep(TimeUnit.HOURS.toMillis(24));
                     //Restart Server to check everything again.
                     System.out.println("Restarting EMERNET E.I.N.S server...");

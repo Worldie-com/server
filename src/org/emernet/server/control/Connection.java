@@ -8,7 +8,7 @@ public class Connection {
             System.out.println("Connection established.");
         }else{
             System.out.println(CmdColors.CMD_RED + "Entering Lockdown mode..." + CmdColors.CMD_RESET);
-
+            Lockdown.enterLockdown();
         }
     }
 }
