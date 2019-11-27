@@ -12,7 +12,7 @@ public class Controller {
         try {
             //Create new Screen session
             System.out.println("Relaunching runtime in screen 'emernet'");
-            Process createScreen = rt.exec("sh ./screenShell.sh");
+            Process createScreen = rt.exec("sh ./relaunch.sh");
         } catch (IOException e) {
             e.printStackTrace();
         }
