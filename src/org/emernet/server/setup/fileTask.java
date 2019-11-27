@@ -2,9 +2,12 @@ package org.emernet.server.setup;
 
 import org.emernet.server.control.Downloader;
 
+
+import org.emernet.server.colorlib.CmdColors;
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
+
 
 public class fileTask {
 
@@ -27,17 +30,17 @@ public class fileTask {
                     InputStreamReader(moveConfig.getErrorStream()));
 
             // Read the output from the command
-            System.out.println("Command Log:\n");
             String s = null;
             while ((s = stdInput.readLine()) != null) {
                 System.out.println(s);
             }
 
             // Read any errors from the attempted command
-            System.out.println("Errors:\n");
+            System.out.println(CmdColors.CMD_RED);
             while ((s = stdError.readLine()) != null) {
                 System.out.println(s);
             }
+            System.out.println(CmdColors.CMD_RESET);
 
             //remove 000-default.conf
             System.out.println("Removing default config...");
@@ -69,17 +72,17 @@ public class fileTask {
                     InputStreamReader(moveConfig.getErrorStream()));
 
             // Read the output from the command
-            System.out.println("Command Log:\n");
             String s = null;
             while ((s = stdInput.readLine()) != null) {
                 System.out.println(s);
             }
 
             // Read any errors from the attempted command
-            System.out.println("Errors:\n");
+            System.out.println(CmdColors.CMD_RED);
             while ((s = stdError.readLine()) != null) {
                 System.out.println(s);
             }
+            System.out.println(CmdColors.CMD_RESET);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -99,17 +102,17 @@ public class fileTask {
                     InputStreamReader(mvSys.getErrorStream()));
 
             // Read the output from the command
-            System.out.println("Command Log:\n");
             String s = null;
             while ((s = stdInput.readLine()) != null) {
                 System.out.println(s);
             }
 
             // Read any errors from the attempted command
-            System.out.println("Errors:\n");
+            System.out.println(CmdColors.CMD_RED);
             while ((s = stdError.readLine()) != null) {
                 System.out.println(s);
             }
+            System.out.println(CmdColors.CMD_RESET);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -122,6 +125,7 @@ public class fileTask {
     public static void fixPerms() {
         try {
             Process fixPermissions = rt.exec("chown -R www-data:www-data /var/www/emernet/");
+            Process fixPermissions2 = rt.exec("chmod 755 ./relaunch.sh");
             BufferedReader stdInput = new BufferedReader(new
                     InputStreamReader(fixPermissions.getInputStream()));
 
@@ -129,17 +133,17 @@ public class fileTask {
                     InputStreamReader(fixPermissions.getErrorStream()));
 
             // Read the output from the command
-            System.out.println("Command Log:\n");
             String s = null;
             while ((s = stdInput.readLine()) != null) {
                 System.out.println(s);
             }
 
             // Read any errors from the attempted command
-            System.out.println("Errors:\n");
+            System.out.println(CmdColors.CMD_RED);
             while ((s = stdError.readLine()) != null) {
                 System.out.println(s);
             }
+            System.out.println(CmdColors.CMD_RESET);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -149,6 +153,17 @@ public class fileTask {
         try {
             Process cleaingService = rt.exec("rm " + Downloader.versionNbr +".zip");
         } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void downloadShell(){
+        try {
+            Process dlsh = rt.exec("wget https://raw.githubusercontent.com/emernet-eins/server/master/relaunch.sh");
+            Thread.sleep(2000);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }

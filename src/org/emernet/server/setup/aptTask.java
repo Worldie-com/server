@@ -20,17 +20,17 @@ public class aptTask {
                     InputStreamReader(aptUpdater.getErrorStream()));
 
             // Read the output from the command
-            System.out.println("Command Log:\n");
             String s = null;
             while ((s = stdInput.readLine()) != null) {
                 System.out.println(s);
             }
 
             // Read any errors from the attempted command
-            System.out.println("Error:\n");
+            System.out.println(CmdColors.CMD_RED);
             while ((s = stdError.readLine()) != null) {
                 System.out.println(s);
             }
+            System.out.println(CmdColors.CMD_RESET);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -49,18 +49,17 @@ public class aptTask {
                     InputStreamReader(installApache.getErrorStream()));
 
             // Read the output from the command
-            System.out.println("Command Log:\n");
             String s = null;
             while ((s = stdInput.readLine()) != null) {
                 System.out.println(s);
             }
 
             // Read any errors from the attempted command
-            System.out.println("Error:\n");
+            System.out.println(CmdColors.CMD_RED);
             while ((s = stdError.readLine()) != null) {
                 System.out.println(s);
             }
-
+            System.out.println(CmdColors.CMD_RESET);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -77,17 +76,17 @@ public class aptTask {
                     InputStreamReader(installZip.getErrorStream()));
 
             // Read the output from the command
-            System.out.println("Command Log:\n");
             String s = null;
             while ((s = stdInput.readLine()) != null) {
                 System.out.println(s);
             }
 
             // Read any errors from the attempted command
-            System.out.println("Errors:\n");
+            System.out.println(CmdColors.CMD_RED);
             while ((s = stdError.readLine()) != null) {
                 System.out.println(s);
             }
+            System.out.println(CmdColors.CMD_RESET);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -105,17 +104,45 @@ public class aptTask {
                     InputStreamReader(installUnzip.getErrorStream()));
 
             // Read the output from the command
-            System.out.println("Command Log:\n");
             String s = null;
             while ((s = stdInput.readLine()) != null) {
                 System.out.println(s);
             }
 
             // Read any errors from the attempted command
-            System.out.println("Errors:\n");
+            System.out.println(CmdColors.CMD_RED);
             while ((s = stdError.readLine()) != null) {
                 System.out.println(s);
             }
+            System.out.println(CmdColors.CMD_RESET);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void instScreen(){
+        try {
+            Process installScreen = rt.exec("apt-get install screen");
+
+            BufferedReader stdInput = new BufferedReader(new
+                    InputStreamReader(installScreen.getInputStream()));
+
+            BufferedReader stdError = new BufferedReader(new
+                    InputStreamReader(installScreen.getErrorStream()));
+
+            // Read the output from the command
+            String s = null;
+            while ((s = stdInput.readLine()) != null) {
+                System.out.println(s);
+            }
+
+            // Read any errors from the attempted command
+            System.out.println(CmdColors.CMD_RED);
+            while ((s = stdError.readLine()) != null) {
+                System.out.println(s);
+            }
+            System.out.println(CmdColors.CMD_RESET);
+
         } catch (IOException e) {
             e.printStackTrace();
         }

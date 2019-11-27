@@ -2,6 +2,7 @@ package org.emernet.server.setup;
 
 import org.emernet.server.colorlib.CmdColors;
 import org.emernet.server.control.Downloader;
+import org.emernet.server.control.Controller;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -31,12 +32,17 @@ public class SetupHandler {
         System.out.println("Installing zip...");
         aptTask.instZip();
 
+        // Install Screen
+        System.out.println("Installing Screen...");
+        aptTask.instScreen();
+
         //get ApacheConfig
         fileTask.getConfig();
 
         //Download System
         System.out.println("Downloading latest System...");
         Downloader.downloadSystem();
+        System.out.println(CmdColors.CMD_GREEN + "This is NOT an error. Everything is fine." + CmdColors.CMD_RESET);
 
         //Unzip System
         System.out.println("Unzipping System...");
@@ -45,6 +51,10 @@ public class SetupHandler {
         //move System
         System.out.println("Moving System to /var/www/emernet...");
         fileTask.moveSystem();
+
+        //Download relaunch.sh
+        System.out.println("Downloading relaunch.sh...");
+        fileTask.downloadShell();
 
         //Fix Permissions
         System.out.println("Fixing permissions...");
@@ -61,6 +71,10 @@ public class SetupHandler {
         // Create Done File
         System.out.println("Done!");
         fileTask.createDone();
+
+        // Relaunch Runtime in Screen
+        Controller.relaunch();
+        System.out.println("Use 'screen -r emernet' to view runtime.\n\n\n");
     }
 
     public static void checkRoot() {
@@ -112,19 +126,4 @@ public class SetupHandler {
         }
 
     }
-
-
-    // Outline
-    // 1. Check for root
-    // 2. apt-update - done
-    // 3. install apache2 - done
-    // 4. install unzip - done
-    // 5. mkdir /var/www/emernet - done
-    // 6. download/create Apache .conf for EMERNET - done
-    // 7. Download EMERNET System - done
-    // 8. unzip and move - done
-    // 9. Fix permissions - done
-    // 10. Cleanup (remove .zip)
-
-
 }

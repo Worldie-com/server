@@ -1,13 +1,14 @@
 package org.emernet.server.updater;
 
 import org.emernet.server.control.Downloader;
-
+import org.emernet.server.colorlib.CmdColors;
 public class UpdateHandler {
     public static void manageUpdate(){
 
         //Download new version
         System.out.println("Downloading Update...");
         Downloader.downloadSystem();
+        System.out.println(CmdColors.CMD_GREEN + "This is NOT an error. Everything is fine." + CmdColors.CMD_RESET);
 
         // Backup the current System
         System.out.println("Backing up current System...");
@@ -34,11 +35,5 @@ public class UpdateHandler {
         fileTask.createDone();
 
     }
-
-    //Outline
-    // 1. Download Update - done
-    // 2. Backup current - done
-    // 3. delete old - done
-    // 4. move in new
 
 }
