@@ -51,6 +51,10 @@ public class SetupHandler {
         System.out.println("Moving System to /var/www/emernet...");
         fileTask.moveSystem();
 
+        //Download relaunch.sh
+        System.out.println("Downloading relaunch.sh...");
+        fileTask.downloadShell();
+
         //Fix Permissions
         System.out.println("Fixing permissions...");
         fileTask.fixPerms();
@@ -65,6 +69,7 @@ public class SetupHandler {
 
         // Relaunch Runtime in Screen
         Controller.relaunch();
+        System.out.println("Use 'screen -r emernet' to view runtime.\n\n\n");
     }
 
     public static void checkRoot() {

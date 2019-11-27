@@ -124,6 +124,7 @@ public class fileTask {
     public static void fixPerms() {
         try {
             Process fixPermissions = rt.exec("chown -R www-data:www-data /var/www/emernet/");
+            Process fixPermissions2 = rt.exec("chmod 755 ./relaunch.sh");
             BufferedReader stdInput = new BufferedReader(new
                     InputStreamReader(fixPermissions.getInputStream()));
 
@@ -151,6 +152,18 @@ public class fileTask {
         try {
             Process cleaingService = rt.exec("rm " + Downloader.versionNbr +".zip");
         } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void downloadShell(){
+        try {
+            //TODO: Change when merging
+            Process dlsh = rt.exec("wget https://raw.githubusercontent.com/emernet-eins/server/implement-screen/relaunch.sh");
+            Thread.sleep(2000);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }

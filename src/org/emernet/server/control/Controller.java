@@ -1,6 +1,8 @@
 package org.emernet.server.control;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Controller {
 
@@ -8,7 +10,9 @@ public class Controller {
 
     public static void relaunch(){
         try {
-            Process relaunchRuntime = rt.exec("screen -S emernet java -jar emernet*");
+            //Create new Screen session
+            System.out.println("Relaunching runtime in screen 'emernet'");
+            Process createScreen = rt.exec("sh ./screenShell.sh");
         } catch (IOException e) {
             e.printStackTrace();
         }
