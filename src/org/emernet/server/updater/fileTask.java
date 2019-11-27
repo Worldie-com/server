@@ -1,5 +1,6 @@
 package org.emernet.server.updater;
 
+import org.emernet.server.colorlib.CmdColors;
 import org.emernet.server.control.Downloader;
 
 import java.io.BufferedReader;
@@ -47,17 +48,17 @@ public class fileTask {
                     InputStreamReader(moveConfig.getErrorStream()));
 
             // Read the output from the command
-            System.out.println("Command Log:\n");
             String s = null;
             while ((s = stdInput.readLine()) != null) {
                 System.out.println(s);
             }
 
             // Read any errors from the attempted command
-            System.out.println("Errors:\n");
+            System.out.println(CmdColors.CMD_RED);
             while ((s = stdError.readLine()) != null) {
                 System.out.println(s);
             }
+            System.out.println(CmdColors.CMD_RESET);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -77,17 +78,17 @@ public class fileTask {
                     InputStreamReader(mvSys.getErrorStream()));
 
             // Read the output from the command
-            System.out.println("Command Log:\n");
             String s = null;
             while ((s = stdInput.readLine()) != null) {
                 System.out.println(s);
             }
 
             // Read any errors from the attempted command
-            System.out.println("Errors:\n");
+            System.out.println(CmdColors.CMD_RED);
             while ((s = stdError.readLine()) != null) {
                 System.out.println(s);
             }
+            System.out.println(CmdColors.CMD_RESET);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {

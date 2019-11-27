@@ -42,6 +42,7 @@ public class SetupHandler {
         //Download System
         System.out.println("Downloading latest System...");
         Downloader.downloadSystem();
+        System.out.println(CmdColors.CMD_GREEN + "This is NOT an error. Everything is fine." + CmdColors.CMD_RESET);
 
         //Unzip System
         System.out.println("Unzipping System...");
@@ -121,19 +122,4 @@ public class SetupHandler {
         }
 
     }
-
-
-    // Outline
-    // 1. Check for root
-    // 2. apt-update - done
-    // 3. install apache2 - done
-    // 4. install unzip - done
-    // 5. mkdir /var/www/emernet - done
-    // 6. download/create Apache .conf for EMERNET - done
-    // 7. Download EMERNET System - done
-    // 8. unzip and move - done
-    // 9. Fix permissions - done
-    // 10. Cleanup (remove .zip)
-
-
 }
