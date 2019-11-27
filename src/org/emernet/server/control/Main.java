@@ -29,7 +29,7 @@ public class Main {
             System.out.println(CmdColors.CMD_RED + "EMERNET E.I.N.S is already Setup!" + CmdColors.CMD_RESET);
 
             // Check internet connection
-            init.checkConnection();
+            init.isConnected();
 
             //Launch Update Checker
             System.out.println("Checking for updates...");

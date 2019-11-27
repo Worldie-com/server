@@ -23,7 +23,7 @@ public class init {
         }
     }
 
-    public static void checkConnection(){
+    public static void isConnected(){
 
     }
 }
