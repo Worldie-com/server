@@ -52,6 +52,7 @@ public class init {
         }
 
         if (status.equals("online")){
+            status = "";
             return true;
         }else{
             return false;
