@@ -5,8 +5,6 @@ import org.emernet.server.control.Downloader;
 
 import org.emernet.server.colorlib.CmdColors;
 import java.io.*;
-import java.net.MalformedURLException;
-import java.net.URL;
 
 
 public class fileTask {

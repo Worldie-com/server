@@ -96,6 +96,7 @@ The setup will start to install all the required packages, applications and webs
 * Apache2
 * zip
 * unzip
+* screen
 * More coming soon ([Click here for more information](https://github.com/emernet-eins/server#concepts)) 
 
 ### What this setup does
@@ -104,23 +105,16 @@ The setup will start to install all the required packages, applications and webs
 * Install an (Apache) Web server
 * Creates Apache Config
 * Sets (fixes) the permissions
+* Relaunches the runtime in a screen
 
 ### Finish
 
 Now the EMERNET E.I.N.S runtime is deployed successfully.
 
-Before running the runtime, please make sure to use a screen, because the runtime will block your SSH interface.
-
-Screen installation (Debian):
+After the setup finished, the runtime will be relaunched in a screen which you can access by using
 
 ```bash
-apt-get install screen
-```
-
-To finally start the runtime (which will run continuously) use this command as root:
-
-```bash
-screen -S emernet java -jar emernet-runtime_X.jar
+screen -r emernet
 ```
 
 The runtime will check for updates every 24 hours to provide the latest information.
