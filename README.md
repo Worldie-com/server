@@ -121,6 +121,7 @@ screen -r emernet
 The runtime will check for updates every 24 hours to provide the latest information.
 
 <h2 align="center" id="updating">Updating</h2>
+
 ### Updating the server runtime
 Currently, there is no automatic way for the runtime to update it self. We might add this as a feature in future releases.
 
