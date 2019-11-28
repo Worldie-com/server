@@ -39,7 +39,7 @@ public class Main {
                 System.out.println("Going to sleep for 24 hours.");
                 try {
                     int count = 0;
-                    while (count < 24){
+                    while (count < 48){
                         count++;
                         Connection.checkConnection();
                         Thread.sleep(TimeUnit.MINUTES.toMillis(30));
