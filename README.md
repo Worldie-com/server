@@ -36,6 +36,7 @@ After installing it successfully, you should have a fully working EMERNET E.I.N.
 
 1. [Requirements](#requirements)
 2. [Installation](#install)
+3. [Updating](#updating)
 3. [Introduction](#introduction)
 4. [Concepts](#concepts)
 5. [Contributing](#contributing)
@@ -118,6 +119,13 @@ screen -r emernet
 ```
 
 The runtime will check for updates every 24 hours to provide the latest information.
+
+<h2 align="center" id="updating">Updating</h2>
+### Updating the server runtime
+Currently, there is no automatic way for the runtime to update it self. We might add this as a feature in future releases.
+
+So if you want to always have the latest runtime, please check back to the [releases page](https://github.com/emernet-eins/server/releases) over time to be up to date.
+
 
 <h2 align="center" id="introduction">Introduction</h2>
 
