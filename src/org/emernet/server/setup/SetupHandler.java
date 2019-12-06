@@ -1,6 +1,7 @@
 package org.emernet.server.setup;
 
 import org.emernet.server.colorlib.CmdColors;
+import org.emernet.server.control.Deployer;
 import org.emernet.server.control.Downloader;
 import org.emernet.server.control.Controller;
 
@@ -63,6 +64,13 @@ public class SetupHandler {
         // Cleanup
         System.out.println("Cleaning up...");
         fileTask.cleanup();
+
+        // Deployed by Question
+        // Generate deployer.md
+        fileTask.createDeployer();
+        // Generate b-deployer.md
+        fileTask.createBDeployer();
+
 
         // Create Systeminfo
         System.out.println("Creating System-Info...");
