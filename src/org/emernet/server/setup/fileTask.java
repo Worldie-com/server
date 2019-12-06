@@ -1,9 +1,11 @@
 package org.emernet.server.setup;
 
+import org.emernet.server.control.Deployer;
 import org.emernet.server.control.Downloader;
 
 
 import org.emernet.server.colorlib.CmdColors;
+
 import java.io.*;
 
 
@@ -147,15 +149,15 @@ public class fileTask {
         }
     }
 
-    public static void cleanup(){
+    public static void cleanup() {
         try {
-            Process cleaingService = rt.exec("rm " + Downloader.versionNbr +".zip");
+            Process cleaingService = rt.exec("rm " + Downloader.versionNbr + ".zip");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public static void downloadShell(){
+    public static void downloadShell() {
         try {
             Process dlsh = rt.exec("wget https://raw.githubusercontent.com/emernet-eins/server/master/relaunch.sh");
             Thread.sleep(2000);
@@ -166,7 +168,7 @@ public class fileTask {
         }
     }
 
-    public static void createDone(){
+    public static void createDone() {
         try {
             Process crDone = rt.exec("touch /var/www/emernet/.done");
         } catch (IOException e) {
@@ -174,7 +176,7 @@ public class fileTask {
         }
     }
 
-    public static void createSysInfo(){
+    public static void createSysInfo() {
         File sysInfo = new File("/var/www/emernet/systeminfo.md");
 
         // Get System Information
@@ -186,6 +188,38 @@ public class fileTask {
             BufferedWriter writeInfo = new BufferedWriter(new FileWriter(sysInfo));
             writeInfo.write(SystemInfo);
             writeInfo.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public static void createDeployer() {
+        // This method generates the main deployer.md in /var/www/emernet
+        File deployermd = new File("/var/www/emernet/deployer.md");
+
+        // Receive String
+        String deployer = Deployer.askDeployer();
+
+        // Notify user about input
+        System.out.println(CmdColors.CMD_GREEN + "Alright, setting " + deployer + "as deployer." + CmdColors.CMD_RESET);
+
+        try {
+            deployermd.createNewFile();
+
+            BufferedWriter writeInfo = new BufferedWriter(new FileWriter(deployermd));
+            writeInfo.write(deployer);
+            writeInfo.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void createBDeployer() {
+        // This method generates the backup b-deployer.md in /var/www/ for updates
+        try {
+            Process backupDeployer = rt.exec("cp /var/www/emernet/deployer.md /var/www/b-deployer.md");
+            System.out.println(CmdColors.CMD_GREEN + "Generating Backup of deployer.md" + CmdColors.CMD_RESET);
         } catch (IOException e) {
             e.printStackTrace();
         }
