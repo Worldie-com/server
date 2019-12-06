@@ -120,4 +120,13 @@ public class fileTask {
 
     }
 
+    public static void copyDeployer(){
+        System.out.println("Copying b-deployer.md...");
+        try {
+            Process copyDeployer = rt.exec("cp /var/www/b-deployer.md /var/www/emernet/deployer.md");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

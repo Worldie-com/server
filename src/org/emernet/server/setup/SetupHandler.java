@@ -67,8 +67,10 @@ public class SetupHandler {
 
         // Deployed by Question
         // Generate deployer.md
-
+        fileTask.createDeployer();
         // Generate b-deployer.md
+        fileTask.createBDeployer();
+
 
         // Create Systeminfo
         System.out.println("Creating System-Info...");
