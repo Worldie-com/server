@@ -26,6 +26,9 @@ public class UpdateHandler {
         System.out.println("Moving System to /var/www/emernet...");
         fileTask.moveSystem();
 
+        // Copy B-Deployer.md
+        fileTask.copyDeployer();
+
         // Create new SystemInfo
         System.out.println("Creating Systeminfo...");
         fileTask.createSysInfo();
