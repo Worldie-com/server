@@ -1,7 +1,5 @@
 package org.emernet.server.control;
 
-import com.sun.deploy.util.SystemUtils;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
