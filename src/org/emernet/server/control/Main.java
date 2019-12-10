@@ -1,6 +1,6 @@
 package org.emernet.server.control;
 
-import org.emernet.server.colorlib.CmdColors;
+import dev.miit0o.clilib.lib.TextColors;
 import org.emernet.server.updater.UpdateHandler;
 import org.emernet.server.updater.checkUpdate;
 import org.emernet.server.setup.SetupHandler;
@@ -18,7 +18,7 @@ public class Main {
         if (init.isLinux()) {
             System.out.println("OS is Linux! Ready to go!");
         } else {
-            System.out.println(CmdColors.CMD_RED + "This application is only working with Linux." + CmdColors.CMD_RESET);
+            System.out.println(TextColors.red + "This application is only working with Linux." + TextColors.reset);
             System.exit(1);
         }
 
@@ -26,7 +26,7 @@ public class Main {
         System.out.println("Checking if a version is installed...");
         init.isSetup();
         if (init.isSetup()) {
-            System.out.println(CmdColors.CMD_RED + "EMERNET E.I.N.S is already Setup!" + CmdColors.CMD_RESET);
+            System.out.println(TextColors.red + "EMERNET E.I.N.S is already Setup!" + TextColors.reset);
 
             // Check internet connection
             Connection.checkConnection();
