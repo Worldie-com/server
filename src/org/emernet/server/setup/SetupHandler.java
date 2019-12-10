@@ -1,10 +1,8 @@
 package org.emernet.server.setup;
 
-import org.emernet.server.colorlib.CmdColors;
-import org.emernet.server.control.Deployer;
 import org.emernet.server.control.Downloader;
 import org.emernet.server.control.Controller;
-
+import dev.miit0o.clilib.lib.TextColors;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -43,7 +41,7 @@ public class SetupHandler {
         //Download System
         System.out.println("Downloading latest System...");
         Downloader.downloadSystem();
-        System.out.println(CmdColors.CMD_GREEN + "This is NOT an error. Everything is fine." + CmdColors.CMD_RESET);
+        System.out.println(TextColors.green + "This is NOT an error. Everything is fine." + TextColors.reset);
 
         //Unzip System
         System.out.println("Unzipping System...");
@@ -87,16 +85,16 @@ public class SetupHandler {
 
     public static void checkRoot() {
         if (isRoot()) {
-            System.out.println(CmdColors.CMD_GREEN + "Root is granted!" + CmdColors.CMD_RESET);
+            System.out.println(TextColors.green + "Root is granted!" + TextColors.reset);
         } else {
-            System.out.println(CmdColors.CMD_RED + "No root available!" + CmdColors.CMD_RESET);
+            System.out.println(TextColors.red + "No root available!" + TextColors.reset);
             try {
                 Thread.sleep(2000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
 
-            System.out.println(CmdColors.CMD_RED + "Please login as root using su, or start the process again with sudo!" + CmdColors.CMD_RESET);
+            System.out.println(TextColors.red + "Please login as root using su, or start the process again with sudo!" + TextColors.reset);
             System.exit(1);
 
         }
