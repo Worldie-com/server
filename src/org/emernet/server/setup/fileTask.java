@@ -3,8 +3,7 @@ package org.emernet.server.setup;
 import org.emernet.server.control.Deployer;
 import org.emernet.server.control.Downloader;
 
-
-import org.emernet.server.colorlib.CmdColors;
+import dev.miit0o.clilib.lib.TextColors;
 
 import java.io.*;
 
@@ -36,11 +35,11 @@ public class fileTask {
             }
 
             // Read any errors from the attempted command
-            System.out.println(CmdColors.CMD_RED);
+            System.out.println(TextColors.red);
             while ((s = stdError.readLine()) != null) {
                 System.out.println(s);
             }
-            System.out.println(CmdColors.CMD_RESET);
+            System.out.println(TextColors.reset);
 
             //remove 000-default.conf
             System.out.println("Removing default config...");
@@ -78,11 +77,11 @@ public class fileTask {
             }
 
             // Read any errors from the attempted command
-            System.out.println(CmdColors.CMD_RED);
+            System.out.println(TextColors.red);
             while ((s = stdError.readLine()) != null) {
                 System.out.println(s);
             }
-            System.out.println(CmdColors.CMD_RESET);
+            System.out.println(TextColors.reset);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -108,11 +107,11 @@ public class fileTask {
             }
 
             // Read any errors from the attempted command
-            System.out.println(CmdColors.CMD_RED);
+            System.out.println(TextColors.red);
             while ((s = stdError.readLine()) != null) {
                 System.out.println(s);
             }
-            System.out.println(CmdColors.CMD_RESET);
+            System.out.println(TextColors.reset);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -139,11 +138,11 @@ public class fileTask {
             }
 
             // Read any errors from the attempted command
-            System.out.println(CmdColors.CMD_RED);
+            System.out.println(TextColors.red);
             while ((s = stdError.readLine()) != null) {
                 System.out.println(s);
             }
-            System.out.println(CmdColors.CMD_RESET);
+            System.out.println(TextColors.reset);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -202,7 +201,7 @@ public class fileTask {
         String deployer = Deployer.askDeployer();
 
         // Notify user about input
-        System.out.println(CmdColors.CMD_GREEN + "Alright, setting " + deployer + "as deployer." + CmdColors.CMD_RESET);
+        System.out.println(TextColors.green + "Alright, setting " + deployer + "as deployer." + TextColors.reset);
 
         try {
             deployermd.createNewFile();
@@ -219,7 +218,7 @@ public class fileTask {
         // This method generates the backup b-deployer.md in /var/www/ for updates
         try {
             Process backupDeployer = rt.exec("cp /var/www/emernet/deployer.md /var/www/b-deployer.md");
-            System.out.println(CmdColors.CMD_GREEN + "Generating Backup of deployer.md" + CmdColors.CMD_RESET);
+            System.out.println(TextColors.green + "Generating Backup of deployer.md" + TextColors.reset);
         } catch (IOException e) {
             e.printStackTrace();
         }
