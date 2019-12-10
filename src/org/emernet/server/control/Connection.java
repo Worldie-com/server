@@ -1,6 +1,7 @@
 package org.emernet.server.control;
 
 import org.emernet.server.colorlib.CmdColors;
+import dev.miit0o.clilib.lib.TextColors;
 
 public class Connection {
     public static void checkConnection(){
@@ -8,7 +9,7 @@ public class Connection {
         if(init.isConnected()){
             System.out.println("Connection established.\n");
         }else{
-            System.out.println(CmdColors.CMD_RED + "Entering Lockdown mode..." + CmdColors.CMD_RESET);
+            System.out.println(TextColors.red + "Entering Lockdown mode..." + TextColors.reset);
             Lockdown.enterLockdown();
         }
     }
