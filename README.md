@@ -231,5 +231,6 @@ This is how we use the donations:
 
 * @W3schools for [W3CSS](https://www.w3schools.com/w3css/), which provides our (beautiful) design
 * Fontawesome for well... [Fontawesome](https://fontawesome.com)
+* Not really a thanks (because I created it): [miit0o](https://github.com/miit0o) for [clilib](https://github.com/miit0o/clilib)
 * Everyone who has helped making EMERNET what it is today
 * Everyone I forgot to mention here, but also influenced EMERNET.

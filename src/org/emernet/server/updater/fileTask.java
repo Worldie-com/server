@@ -1,6 +1,6 @@
 package org.emernet.server.updater;
 
-import org.emernet.server.colorlib.CmdColors;
+import dev.miit0o.clilib.lib.TextColors;
 import org.emernet.server.control.Downloader;
 
 import java.io.*;
@@ -52,11 +52,11 @@ public class fileTask {
             }
 
             // Read any errors from the attempted command
-            System.out.println(CmdColors.CMD_RED);
+            System.out.println(TextColors.red);
             while ((s = stdError.readLine()) != null) {
                 System.out.println(s);
             }
-            System.out.println(CmdColors.CMD_RESET);
+            System.out.println(TextColors.reset);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -82,11 +82,11 @@ public class fileTask {
             }
 
             // Read any errors from the attempted command
-            System.out.println(CmdColors.CMD_RED);
+            System.out.println(TextColors.red);
             while ((s = stdError.readLine()) != null) {
                 System.out.println(s);
             }
-            System.out.println(CmdColors.CMD_RESET);
+            System.out.println(TextColors.reset);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {

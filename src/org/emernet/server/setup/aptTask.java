@@ -1,7 +1,6 @@
 package org.emernet.server.setup;
 
-import org.emernet.server.colorlib.CmdColors;
-
+import dev.miit0o.clilib.lib.TextColors;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -26,11 +25,11 @@ public class aptTask {
             }
 
             // Read any errors from the attempted command
-            System.out.println(CmdColors.CMD_RED);
+            System.out.println(TextColors.red);
             while ((s = stdError.readLine()) != null) {
                 System.out.println(s);
             }
-            System.out.println(CmdColors.CMD_RESET);
+            System.out.println(TextColors.reset);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -55,11 +54,11 @@ public class aptTask {
             }
 
             // Read any errors from the attempted command
-            System.out.println(CmdColors.CMD_RED);
+            System.out.println(TextColors.red);
             while ((s = stdError.readLine()) != null) {
                 System.out.println(s);
             }
-            System.out.println(CmdColors.CMD_RESET);
+            System.out.println(TextColors.reset);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -82,11 +81,11 @@ public class aptTask {
             }
 
             // Read any errors from the attempted command
-            System.out.println(CmdColors.CMD_RED);
+            System.out.println(TextColors.red);
             while ((s = stdError.readLine()) != null) {
                 System.out.println(s);
             }
-            System.out.println(CmdColors.CMD_RESET);
+            System.out.println(TextColors.reset);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -110,11 +109,11 @@ public class aptTask {
             }
 
             // Read any errors from the attempted command
-            System.out.println(CmdColors.CMD_RED);
+            System.out.println(TextColors.red);
             while ((s = stdError.readLine()) != null) {
                 System.out.println(s);
             }
-            System.out.println(CmdColors.CMD_RESET);
+            System.out.println(TextColors.reset);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -137,11 +136,11 @@ public class aptTask {
             }
 
             // Read any errors from the attempted command
-            System.out.println(CmdColors.CMD_RED);
+            System.out.println(TextColors.red);
             while ((s = stdError.readLine()) != null) {
                 System.out.println(s);
             }
-            System.out.println(CmdColors.CMD_RESET);
+            System.out.println(TextColors.reset);
 
         } catch (IOException e) {
             e.printStackTrace();
