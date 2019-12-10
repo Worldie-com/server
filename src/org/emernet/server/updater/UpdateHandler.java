@@ -1,14 +1,14 @@
 package org.emernet.server.updater;
 
+import dev.miit0o.clilib.lib.TextColors;
 import org.emernet.server.control.Downloader;
-import org.emernet.server.colorlib.CmdColors;
 public class UpdateHandler {
     public static void manageUpdate(){
 
         //Download new version
         System.out.println("Downloading Update...");
         Downloader.downloadSystem();
-        System.out.println(CmdColors.CMD_GREEN + "This is NOT an error. Everything is fine." + CmdColors.CMD_RESET);
+        System.out.println(TextColors.green + "This is NOT an error. Everything is fine." + TextColors.reset);
 
         // Backup the current System
         System.out.println("Backing up current System...");
