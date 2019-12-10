@@ -1,6 +1,5 @@
 package org.emernet.server.control;
 
-import org.emernet.server.colorlib.CmdColors;
 import dev.miit0o.clilib.lib.TextColors;
 
 public class Connection {
