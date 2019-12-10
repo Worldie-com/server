@@ -1,6 +1,7 @@
 package org.emernet.server.updater;
 
 import dev.miit0o.clilib.lib.TextColors;
+import dev.miit0o.clilib.lib.TextStyles;
 import org.emernet.server.control.Downloader;
 
 import java.io.*;
@@ -121,7 +122,7 @@ public class fileTask {
     }
 
     public static void copyDeployer(){
-        System.out.println("Copying b-deployer.md...");
+        System.out.println(TextStyles.bold + "Copying b-deployer.md..."+ TextStyles.reset);
         try {
             Process copyDeployer = rt.exec("cp /var/www/b-deployer.md /var/www/emernet/deployer.md");
         } catch (IOException e) {

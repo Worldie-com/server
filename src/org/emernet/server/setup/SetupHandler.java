@@ -3,6 +3,7 @@ package org.emernet.server.setup;
 import org.emernet.server.control.Downloader;
 import org.emernet.server.control.Controller;
 import dev.miit0o.clilib.lib.TextColors;
+import dev.miit0o.clilib.lib.TextStyles;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -12,55 +13,55 @@ public class SetupHandler {
 
     public static void handler() {
         //Check for root privileges
-        System.out.println("Checking for root privileges...");
+        System.out.println(TextStyles.bold + "Checking for root privileges..." + TextColors.reset);
         checkRoot();
 
         //Check for Package Updates
-        System.out.println("Refreshing Package List...");
+        System.out.println(TextStyles.bold + "Refreshing Package List..." + TextColors.reset);
         aptTask.aptUpdate();
 
         //Install Apache2
-        System.out.println("Installing Apache2...");
+        System.out.println(TextStyles.bold + "Installing Apache2..." + TextColors.reset);
         aptTask.instApache();
 
         //Install Unzip
-        System.out.println("Installing unzip...");
+        System.out.println(TextStyles.bold + "Installing unzip..." + TextColors.reset);
         aptTask.instUnzip();
 
         //Install Zip
-        System.out.println("Installing zip...");
+        System.out.println(TextStyles.bold + "Installing zip..." + TextColors.reset);
         aptTask.instZip();
 
         // Install Screen
-        System.out.println("Installing Screen...");
+        System.out.println(TextStyles.bold + "Installing Screen..." + TextColors.reset);
         aptTask.instScreen();
 
         //get ApacheConfig
         fileTask.getConfig();
 
         //Download System
-        System.out.println("Downloading latest System...");
+        System.out.println(TextStyles.bold + "Downloading latest System..." + TextColors.reset);
         Downloader.downloadSystem();
         System.out.println(TextColors.green + "This is NOT an error. Everything is fine." + TextColors.reset);
 
         //Unzip System
-        System.out.println("Unzipping System...");
+        System.out.println(TextStyles.bold + "Unzipping System..." + TextColors.reset);
         fileTask.unzip();
 
         //move System
-        System.out.println("Moving System to /var/www/emernet...");
+        System.out.println(TextStyles.bold + "Moving System to /var/www/emernet..." + TextColors.reset);
         fileTask.moveSystem();
 
         //Download relaunch.sh
-        System.out.println("Downloading relaunch.sh...");
+        System.out.println(TextStyles.bold + "Downloading relaunch.sh..." + TextColors.reset);
         fileTask.downloadShell();
 
         //Fix Permissions
-        System.out.println("Fixing permissions...");
+        System.out.println(TextStyles.bold + "Fixing permissions..." + TextColors.reset);
         fileTask.fixPerms();
 
         // Cleanup
-        System.out.println("Cleaning up...");
+        System.out.println(TextStyles.bold + "Cleaning up..." + TextColors.reset);
         fileTask.cleanup();
 
         // Deployed by Question
@@ -71,16 +72,16 @@ public class SetupHandler {
 
 
         // Create Systeminfo
-        System.out.println("Creating System-Info...");
+        System.out.println(TextStyles.bold + "Creating System-Info..." + TextColors.reset);
         fileTask.createSysInfo();
 
         // Create Done File
-        System.out.println("Done!");
+        System.out.println(TextStyles.bold + "Done!" + TextColors.reset);
         fileTask.createDone();
 
         // Relaunch Runtime in Screen
         Controller.relaunch();
-        System.out.println("Use 'screen -r emernet' to view runtime.\n\n\n");
+        System.out.println(TextStyles.underline + "Use 'screen -r emernet' to view runtime.\n\n\n" + TextColors.reset);
     }
 
     public static void checkRoot() {
